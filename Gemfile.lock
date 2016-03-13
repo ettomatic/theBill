@@ -11,11 +11,15 @@ GEM
       xpath (~> 2.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     json (1.8.3)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2015.1120)
     mini_portile2 (2.0.0)
+    multi_xml (0.5.5)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     puma (2.16.0)
@@ -55,6 +59,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  httparty
   puma
   rspec
   simplecov
