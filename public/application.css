@@ -1,0 +1,105 @@
+@media (max-width: 48em) {
+  .help, .welcome {
+    display: none;
+  }
+
+  .label h2 {
+    text-align: left;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  /* Set your content font stack here: */
+  font-family: 'Raleway', sans-serif;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+}
+
+.header {
+  padding: 1em 2em;
+}
+
+.summary {
+  padding: 0 2em;
+}
+
+.details {
+  padding: 2em;
+}
+
+.label {
+  background-color: rgb(61, 146, 201);
+  text-align: right;
+  color: #fff;
+}
+
+
+.val {
+  border: 1px solid #eee;
+}
+
+.label h2 {
+  font-size: 1.8em;
+}
+.label, .data {
+  padding: 0 1em;
+}
+
+.label .help {
+  font-size: 0.7em;
+  color: #fff;
+}
+
+.label .help a {
+  color: #fff;
+}
+.data table {
+  border: none;
+  margin: 1em;
+  width: 80%;
+}
+
+.data strong {
+  color: rgb(61, 146, 201);
+}
+
+.data .prod {
+  text-transform: capitalize;
+  color: rgb(61, 146, 201);
+  width: 25%;
+}
+
+.data .desc {
+  width: 50%;
+}
+
+.data .price {
+  text-align: right;
+  width: 25%;
+}
+
+.data tfoot td {
+  border: none;
+}
+
+.data .total {
+  font-weight: bold;
+}

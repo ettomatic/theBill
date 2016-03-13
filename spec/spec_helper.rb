@@ -1,3 +1,3 @@
-require_relative '../lib/bill'
+require_relative '../lib/sky'
 require 'simplecov'
 SimpleCov.start
