@@ -3,6 +3,10 @@ gem 'puma'
 gem 'sinatra'
 gem 'httparty'
 gem 'dotenv'
-gem 'rspec'
-gem 'simplecov'
-gem 'capybara'
+
+group :test do
+  gem 'rspec'
+  gem 'simplecov'
+  gem 'capybara'
+  gem 'webmock'
+end

@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'httparty'
+
 module Sky
   class App < Sinatra::Application
     set :root, File.join(File.dirname(__FILE__), '..', '..')
@@ -7,6 +7,8 @@ module Sky
     set :public_folder, Proc.new { File.join(root, 'public') }
 
     get '/my/bill' do
+      data = BillRepository.find
+      @bill = Bill.new(data)
       erb :bill
     end
   end

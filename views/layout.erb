@@ -12,7 +12,7 @@
             <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
         <!--<![endif]-->
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
-        <link href="application.css" rel="stylesheet">
+        <link href="/application.css" rel="stylesheet">
     </head>
     <body>
         <div class="header">
@@ -25,118 +25,6 @@
                 </div>
             </div>
         </div>
-        <div class="summary">
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-3 label">
-                    <div class="label">
-                        <h2>Bill summary</h2>
-                        <div class="help">
-                            <p>Ths bill has been created on 11/1/2015<p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pure-u-1 pure-u-md-2-3 val">
-                    <div class="data">
-                        <p>Total amount due for the period <strong>26 jan 2015 / 25 feb 2015.</strong></p>
-                        <h1>£ 136.03</h1>
-                        <p><a class="button-success pure-button" href="#">Make payment</a></p>
-                        <p>Please ensure we receive the payment by <strong>25 jan 2015</strong>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="details">
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-3 label">
-                    <div class="label">
-                        <h2>Bill details</h2>
-                        <div class="help">
-                            <p>You can manage your subscriptions <a href="#">here</a>.<p>
-                            <p>Need more help? have a look at our <a href="#">FAQ</a>.<p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pure-u-1 pure-u-md-2-3 val">
-                    <div class="data">
-                        <p>How we work out your bill of <strong>£ 112.34</strong>:</p>
-                        <h2>My subscriptions</h2>
-                        <table class="pure-table pure-table-horizontal">
-                            <tbody>
-                                <tr>
-                                    <td class="prod">tv</td>
-                                    <td class="desc">Variety with Movies HD</td>
-                                    <td class="price">£ 50.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="prod">talk</td>
-                                    <td class="desc">Sky Talk Anytime</td>
-                                    <td class="price">£ 5.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="prod">broadband</td>
-                                    <td class="desc">Fibre Unlimited</td>
-                                    <td class="price">£ 16.40</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2" class="price total">Total</td>
-                                    <td class="price total">£ 71.40</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-
-                        <h2>Sky Store</h2>
-                        <table class="pure-table pure-table-horizontal">
-                            <tbody>
-                                <tr>
-                                    <td class="prod">buy & keep</td>
-                                    <td class="desc">That's what she said</td>
-                                    <td class="price">£ 9.99</td>
-                                </tr>
-                                <tr>
-                                    <td class="prod">rentals</td>
-                                    <td class="desc">50 Shades of Grey</td>
-                                    <td class="price">£ 4.99</td>
-                                </tr>
-                                <tr>
-                                    <td class="prod">broadband</td>
-                                    <td class="desc">Fibre Unlimited</td>
-                                    <td class="price">£ 16.40</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2" class="price total">Total</td>
-                                    <td class="price total">£ 24.97</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-
-                        <h2>Call Charges</h2>
-                        <table class="pure-table pure-table-horizontal">
-                            <tbody>
-                                <tr>
-                                    <td class="prod">07716386769</td>
-                                    <td class="desc">(00:23:03)</td>
-                                    <td class="price">£ 2.13</td>
-                                </tr>
-                                <tr>
-                                    <td class="prod">07716386769</td>
-                                    <td class="desc">(00:23:03)</td>
-                                    <td class="price">£ 2.13</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2" class="price total">Total</td>
-                                    <td class="price total">£ 59.64</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <%= yield %>
     </body>
 </html>

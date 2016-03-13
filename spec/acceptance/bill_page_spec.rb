@@ -13,6 +13,13 @@ feature 'A user visiting the bill page' do
     end
   end
 
+  scenario 'See the bill due date in the summary section' do
+    visit '/my/bill'
+    within('.summary') do
+      expect(page).to have_content('Total amount due for the period')
+    end
+  end
+
   scenario 'See the bill details section' do
     visit '/my/bill'
     expect(page).to have_content('Bill details')
