@@ -35,7 +35,15 @@ describe Sky::Bill do
     expect(subject.to).to eq '25 Feb'
   end
 
-  it 'returns the subscriptions' do
-    expect(subject.subscriptions[0]['cost']).to eq 0.99
+  it 'returns the collection of subscriptions' do
+    expect(subject.subscriptions).to be_a(Sky::Collection)
+  end
+
+  it 'returns the collection of calls' do
+    expect(subject.calls).to be_a(Sky::Collection)
+  end
+
+  it 'returns the collection of store items' do
+    expect(subject.store).to be_a(Sky::StoreCollection)
   end
 end

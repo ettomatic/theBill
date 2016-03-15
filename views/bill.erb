@@ -32,82 +32,68 @@
         <div class="pure-u-1 pure-u-md-2-3 val">
             <div class="data">
                 <p>How we work out your bill of <strong><%= @bill.total %></strong>:</p>
-                <h2>My subscriptions</h2>
-                <table class="pure-table pure-table-horizontal">
-                    <tbody>
-                        <tr>
-                            <td class="prod">tv</td>
-                            <td class="desc">Variety with Movies HD</td>
-                            <td class="price">£ 50.00</td>
-                        </tr>
-                        <tr>
-                            <td class="prod">talk</td>
-                            <td class="desc">Sky Talk Anytime</td>
-                            <td class="price">£ 5.00</td>
-                        </tr>
-                        <tr>
-                            <td class="prod">broadband</td>
-                            <td class="desc">Fibre Unlimited</td>
-                            <td class="price">£ 16.40</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2" class="price total">Total</td>
-                            <td class="price total">£ 71.40</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <div class="subscriptions">
+                    <h2>My subscriptions</h2>
+                    <table class="pure-table pure-table-horizontal">
+                        <tbody>
+                            <% @bill.subscriptions.items.each do |sub| %>
+                                <tr>
+                                    <td class="prod" title="type"><%= sub['type'] %></td>
+                                    <td class="desc" title="product"><%= sub['name'] %></td>
+                                    <td class="price" title="cost"><%= sub['cost'] %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" class="price total">Total</td>
+                                <td class="price total"><%= @bill.subscriptions.total %></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
 
-                <h2>Sky store</h2>
-                <table class="pure-table pure-table-horizontal">
-                    <tbody>
-                        <tr>
-                            <td class="prod">buy & keep</td>
-                            <td class="desc">That's what she said</td>
-                            <td class="price">£ 9.99</td>
-                        </tr>
-                        <tr>
-                            <td class="prod">rentals</td>
-                            <td class="desc">50 Shades of Grey</td>
-                            <td class="price">£ 4.99</td>
-                        </tr>
-                        <tr>
-                            <td class="prod">broadband</td>
-                            <td class="desc">Fibre Unlimited</td>
-                            <td class="price">£ 16.40</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2" class="price total">Total</td>
-                            <td class="price total">£ 24.97</td>
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <h2>Call charges</h2>
-                <table class="pure-table pure-table-horizontal">
-                    <tbody>
-                        <tr>
-                            <td class="prod">07716386769</td>
-                            <td class="desc">(00:23:03)</td>
-                            <td class="price">£ 2.13</td>
-                        </tr>
-                        <tr>
-                            <td class="prod">07716386769</td>
-                            <td class="desc">(00:23:03)</td>
-                            <td class="price">£ 2.13</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2" class="price total">Total</td>
-                            <td class="price total">£ 59.64</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+                <div class="store">
+                    <h2>Sky store</h2>
+                    <table class="pure-table pure-table-horizontal">
+                        <tbody>
+                            <% @bill.store.items.each do |sub| %>
+                                <tr>
+                                    <td class="prod" title="type"><%= sub['type'] %></td>
+                                    <td class="desc" title="title"><%= sub['title'] %></td>
+                                    <td class="price" title="cost"><%= sub['cost'] %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" class="price total">Total</td>
+                                <td class="price total"><%= @bill.store.total %></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="calls">
+                    <h2>Call charges</h2>
+                    <table class="pure-table pure-table-horizontal">
+                        <tbody>
+                            <% @bill.calls.items.each do |sub| %>
+                                <tr>
+                                    <td class="prod" title="Number"><%= sub['called'] %></td>
+                                    <td class="desc" title="duration"><%= sub['duration'] %></td>
+                                    <td class="price" title="cost"><%= sub['cost'] %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" class="price total">Total</td>
+                                <td class="price total"><%= @bill.calls.total %></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </divv>
         </div>
     </div>
 </div>

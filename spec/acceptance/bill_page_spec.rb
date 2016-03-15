@@ -27,7 +27,7 @@ feature 'A user visiting the bill page' do
 
   scenario 'See the subscriptions details' do
     visit '/my/bill'
-    within('.details') do
+    within('.details .subscriptions') do
       expect(page).to have_content('My subscriptions')
       expect(page).to have_content('£ 71.40')
     end
@@ -35,7 +35,7 @@ feature 'A user visiting the bill page' do
 
   scenario 'See the Store details' do
     visit '/my/bill'
-    within('.details') do
+    within('.details .store') do
       expect(page).to have_content('Sky store')
       expect(page).to have_content('£ 24.97')
     end
@@ -43,7 +43,7 @@ feature 'A user visiting the bill page' do
 
   scenario 'See the call charges details' do
     visit '/my/bill'
-    within('.details') do
+    within('.details .calls') do
       expect(page).to have_content('Call charges')
       expect(page).to have_content('£ 59.64')
     end

@@ -1,5 +1,3 @@
-require 'json'
-
 module Sky
   class Bill
     def initialize(data)
@@ -27,7 +25,15 @@ module Sky
     end
 
     def subscriptions
-      @data['package']['subscriptions']
+      @subscriptions ||= Collection.new(data: @data['package'], type: 'subscriptions')
+    end
+
+    def calls
+      @calls ||= Collection.new(data: @data['callCharges'], type: 'calls')
+    end
+
+    def store
+      @store ||= StoreCollection.new(@data['skyStore'])
     end
 
     private
