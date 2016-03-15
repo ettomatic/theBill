@@ -8,8 +8,12 @@ module Sky
 
     get '/my/bill' do
       data = BillRepository.find
-      @bill = Bill.new(data)
-      erb :bill
+      if data
+        @bill = Bill.new(data)
+        erb :bill
+      else
+        [500, "We're experiencing technical difficulties at the moment, please try later"]
+      end
     end
   end
 end

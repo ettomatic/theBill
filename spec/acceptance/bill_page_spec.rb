@@ -36,7 +36,7 @@ feature 'A user visiting the bill page' do
   scenario 'See the Store details' do
     visit '/my/bill'
     within('.details') do
-      expect(page).to have_content('Sky Store')
+      expect(page).to have_content('Sky store')
       expect(page).to have_content('£ 24.97')
     end
   end
@@ -44,8 +44,16 @@ feature 'A user visiting the bill page' do
   scenario 'See the call charges details' do
     visit '/my/bill'
     within('.details') do
-      expect(page).to have_content('Call Charges')
+      expect(page).to have_content('Call charges')
       expect(page).to have_content('£ 59.64')
+    end
+  end
+
+  feature 'A user visiting the billing page with issues' do
+    scenario 'See an error message' do
+      stub_request(:get, %r[\/bill.json]).to_return(:status => [500, 'Internal Server Error'])
+      visit '/my/bill'
+      expect(page).to have_content("We're experiencing technical difficulties at the moment, please try later")
     end
   end
 end
